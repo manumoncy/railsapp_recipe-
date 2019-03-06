@@ -1,0 +1,15 @@
+<h1>Searching for - <%= @search_term %></h1>
+<table border="1">
+	<tr>
+		<th>Image</th>
+		<th>Name</th>
+		<th>Source</th>
+	</tr>
+	<% @recipes.each do |recipe| %>
+		<tr>
+			<td><%= image_tag(recipe['recipe']['image']) %></td>
+			<td><%= link_to recipe['recipe']['label'], railsapp_details_path(:recipe_id => recipe['recipe']['uri']) %></td>
+			<td><%= recipe['recipe']['source'] %></td>
+		</tr>
+	<% end %>
+</table>

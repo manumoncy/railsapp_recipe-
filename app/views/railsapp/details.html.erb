@@ -1,0 +1,13 @@
+<p><%= @recipe['label'] %></p>
+<%= image_tag(@recipe['image']) %>
+<p><%= link_to @recipe['source'], @recipe['url'] %></p>
+<table>
+	<% @recipe['ingredients'].each do |ingredient| %>
+		<tr>
+			<td><%= ingredient['text'] %></td>
+			<td><%= ingredient['weight'] %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= @recipe['yield'] %></p>
+<p><%= @recipe['healthLabels'] %></p>
